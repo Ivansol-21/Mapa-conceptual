@@ -1,0 +1,532 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    padding: 10px;
+    text-align: center;
+    font-style: oblique;
+    background-image: url(Assets/—Pngtree—technology\ curve\ decorative\ line_5487795.png);
+    background-size: cover;
+    background-position-y: -600px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: rgba(0, 0, 0, .6);
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.grid_container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(7, 14vw);
+    grid-template-rows: 15vh repeat(3, 24.6vh) 7vh;
+    grid-template-areas: "item1 item1 item1 item1 item1 item1 item1"
+                         ". item2 . . item3 descripcion ."
+                         ". item4 . . item5 . ."
+                         "item6 item7 item8 item9 item10 item11 item12"
+                         "pie pie pie pie pie pie pie";
+}
+/* __________________ Lineas __________________ */
+.color_linea {
+    background-color: rgb(48, 214, 214);
+    box-shadow: 0 0 2px 2px white;
+}
+.linea_1_s1 {
+    position: absolute;
+    width: 0.4%;
+    z-index: -1;
+    left: 21.4%;
+    top: 16%;
+    animation: vertical_s1 1s 1s forwards;
+    opacity: 0;
+    
+}
+.linea_2_s1 {
+    position: absolute;
+    width: 0.4%;
+    z-index: -1;
+    right: 35.7%;
+    top: 16%;
+    animation: vertical_s1 1s 1s forwards;
+    opacity: 0;
+}
+.i {
+    position: absolute;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    align-items: center;
+    height: 1.5%;
+    width: 14.4%;
+    z-index: -1;
+    top: 68%;
+    left: 7%;
+}
+.linea_1_s2 {
+    height: 60%;
+    animation: horizontal_i_s2 1s 2s forwards;
+    opacity: 0;
+}
+.linea_2_s2 {
+    position: absolute;
+    height: 0.8%;
+    z-index: -1;
+    top: 68.3%;
+    left: 21.6%;
+    animation: horizontal_d_s2 1s 2s forwards;
+    opacity: 0;
+    box-shadow: 4px 0 2px 2px white;
+}
+.i2 {
+    position: absolute;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+    align-items: center;
+    height: 1.5%;
+    width: 14.6%;
+    z-index: -1;
+    top: 68%;
+    left: 49.3%;
+}
+.linea_3_s2 {
+    height: 60%;
+    animation: horizontal_i_s2 1s 2s forwards;
+    opacity: 0;
+}
+.linea_4_s2{
+    position: absolute;
+    height: 0.8%;
+    z-index: -1;
+    top: 68.3%;
+    left: 64.1%;
+    animation: horizontal_d_l_s2 1s 2s forwards;
+    opacity: 0;
+    box-shadow: 4px 0 2px 2px white;
+}
+.linea_1_s3 {
+    position: absolute;
+    width: 0.4%;
+    z-index: -1;
+    top: 68.3%;
+    left: 7%;
+    animation: vertical_s3 300ms 3s forwards;
+    opacity: 0;
+    box-shadow: 0 7px 2px 2px white;
+}
+.linea_2_s3 {
+    position: absolute;
+    width: 0.4%;
+    z-index: -1;
+    top: 68.3%;
+    left: 21.4%;
+    animation: vertical_s3 300ms 3s forwards;
+    opacity: 0;
+    box-shadow: 0 7px 2px 2px white;
+}
+.linea_3_s3 {
+    position: absolute;
+    width: 0.4%;
+    z-index: -1;
+    top: 68.3%;
+    left: 36%;
+    animation: vertical_s3 300ms 3s forwards;
+    opacity: 0;
+    box-shadow: 0 7px 2px 2px white;
+}
+.linea_4_s3 {
+    position: absolute;
+    width: 0.4%;
+    z-index: -1;
+    top: 68.3%;
+    left: 49.3%;
+    animation: vertical_s3 300ms 3s forwards;
+    opacity: 0;
+    box-shadow: 0 7px 2px 2px white;
+}
+.linea_5_s3 {
+    position: absolute;
+    width: 0.4%;
+    z-index: -1;
+    top: 68.3%;
+    right: 35.7%;
+    animation: vertical_s3 300ms 3s forwards;
+    opacity: 0;
+    box-shadow: 0 7px 2px 2px white;
+}
+.linea_6_s3 {
+    position: absolute;
+    width: 0.4%;
+    z-index: -1;
+    top: 68.3%;
+    right: 21.5%;
+    animation: vertical_s3 300ms 3s forwards;
+    opacity: 0;
+    box-shadow: 0 7px 2px 2px white;
+}
+.linea_7_s3 {
+    position: absolute;
+    width: 0.4%;
+    z-index: -1;
+    top: 68.3%;
+    right: 7.1%;
+    animation: vertical_s3 300ms 3s forwards;
+    opacity: 0;
+    box-shadow: 0 7px 2px 2px white;
+}
+
+/* _________ Estilo de los cuadrados __________ */
+.centrado {
+    place-self: center;
+}
+.cuadro {
+    background-color: white;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 yellow,
+                5px 5px 0 2px black;
+    transition-duration: 500ms;
+    cursor: pointer;
+}
+.cuadro_a {
+    background-color: white;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px 0 blue,
+                5px 5px 0 2px black;
+}
+/* ___________ items de la grid/cuadros del mapa __________ */
+.item1 {
+    grid-area: item1;
+    font-weight: bold;
+    align-self: end;
+    justify-self: start;
+    margin-left: 19.5%;
+    padding: 10px 20px;
+    animation: escala 1s;
+}
+#item2 {
+    grid-area: item2;
+    animation: escala 1s 1s forwards;
+    opacity: 0;
+}
+#item3 {
+    grid-area: item3;
+    animation: escala 1s 1s forwards;
+    opacity: 0;
+}
+.descripcion {
+    grid-area: descripcion;
+    font-size: 150%;
+    place-self: center;
+    color: white;
+    text-shadow: 3px 2px 6px  black;
+}
+.item4 {
+    grid-area: item4;
+    animation: escala 1s 1.5s forwards;
+    opacity: 0;
+}
+.item5 {
+    grid-area: item5;
+    animation: escala 1s 1.5s forwards;
+    opacity: 0;
+}
+#item6 {
+    grid-area: item6;
+    animation: escala 1s 3.5s forwards;
+    opacity: 0;
+}
+#item7 {
+    grid-area: item7;
+    animation: escala 1s 3.5s forwards;
+    opacity: 0;
+}
+#item8 {
+    grid-area: item8;
+    animation: escala 1s 3.5s forwards;
+    opacity: 0;
+}
+#item9 {
+    grid-area: item9;
+    animation: escala 1s 3.5s forwards;
+    opacity: 0;
+}
+#item10 {
+    grid-area: item10;
+    animation: escala 1s 3.5s forwards;
+    opacity: 0;
+}
+#item11 {
+    grid-area: item11;
+    animation: escala 1s 3.5s forwards;
+    opacity: 0;
+}
+#item12 {
+    grid-area: item12;
+    animation: escala 1s 3.5s forwards;
+    opacity: 0;
+}
+.pie {
+    grid-area: pie;
+    box-shadow: 5px 5px 0 black,
+                5px 5px 0 2px rgb(16, 240, 16);
+    font-size: 200%;
+    font-weight: bold;
+    background-color: rgb(2, 226, 2);
+}
+.click {
+    color: yellow;
+}
+.p1 {
+    animation: escritura 1s 3.6s forwards;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    padding: 0 1px;
+}
+.p2 {
+    animation: escritura 1s 4s forwards;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    padding: 0 65px;
+}
+.p3 {
+    animation: escritura 1s 4.9s forwards;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+    padding: 0 25.8px;
+}
+/* __________________ Targetas _______________ */
+#contenedor_targeta {
+    position: absolute;
+    display: none;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .9);
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.estandar {
+    background-color: white;
+    border-radius: 10px;
+    width: 650px;
+    height: 96vh;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: none;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 7% 12% 40% 40% 20% 10%;
+    grid-template-areas: "espacio_x espacio_x"
+                         "espacio_2 espacio_2"
+                         "espacio_3 espacio_4"
+                         "espacio_5 espacio_6"
+                         "espacio_7 espacio_7"
+                         "espacio_8 espacio_9";
+    justify-items: center;
+    align-items: center;
+    font-weight: bold;
+}
+.estandar::-webkit-scrollbar {
+    width: 10px;
+}
+.estandar::-webkit-scrollbar-thumb {
+    background-color: yellow;
+    border: 3px solid black;
+    border-radius: 10px;
+}
+.espacio_x {
+    grid-area: espacio_x;
+    justify-self: end;
+    align-self: center;
+    background-color: red;
+    width: 10%;
+    height: 50%;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.equis {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.espacio_2 {
+    grid-area: espacio_2;
+    font-size: 350%;
+}
+.espacio_3 {
+    grid-area: espacio_3;
+    padding: 10px;
+}
+.espacio_4 {
+    grid-area: espacio_4;
+    padding: 10px;
+}
+.espacio_5 {
+    grid-area: espacio_5;
+    padding: 10px;
+}
+.espacio_6 {
+    grid-area: espacio_6;
+    padding: 10px;
+}
+.espacio_7 {
+    grid-area: espacio_7;
+    padding: 10px;
+}
+.espacio_8 {
+    grid-area: espacio_8;
+    background-color: rgb(13, 231, 13);
+    border-radius: 10px;
+    width: 40%;
+    height: 50%;
+    padding: 4px 0 0 0;
+}
+.espacio_9 {
+    grid-area: espacio_9;
+    background-color: rgb(13, 231, 13);
+    border-radius: 10px;
+    width: 40%;
+    height: 50%;
+    padding: 4px 0 0 0;
+}
+.img {
+    width: 100%;
+}
+.img_estirada {
+    width: 100%;
+    height: 100%;
+}
+.img_doble {
+    width: 100%;
+    height: 50%;
+}
+.ocupar_espacio {
+    width: 100%;
+    height: 100%;
+}
+.ancho_para_www_img {
+    width: 70%;
+    height: 100%;
+}
+.video {
+    width: 100%;
+}
+.lista {
+    padding: 2px 60px;
+}
+.alinear_centro {
+    align-self: center;
+}
+.invisible {
+    grid-area: espacio_8;
+    display: none;
+}
+#internet {
+    grid-template-rows: 7% 12% 40% 45% 20% 10%;;
+}
+#sistema {
+    grid-template-rows: 7% 12% 45% 40% 60% 10%;;
+}
+#programacion {
+    grid-template-rows: 7% 12% 40% 40% 21% 10%;;
+}
+#www {
+    grid-template-rows: 7% 12% 40% 40% 65% 10%;;
+}
+#accesoR {
+    grid-template-rows: 7% 12% 40% 40% 50% 10%;;
+}
+#comunicacion {
+    grid-template-rows: 7% 12% 63% 40% 4% 10%;;
+}
+#transferencias {
+    grid-template-rows: 7% 20% 50% 40% 20% 10%;;
+}
+
+/* ______________ Animaciónes _______________ */
+.cuadro:hover {
+     scale: 1.1;
+}
+
+@keyframes vertical_s1 {
+    from {
+        height: 0%;
+        opacity: 1;
+    }
+    to {
+        height: 53%;
+        opacity: 1;
+    }
+}
+@keyframes vertical_s3 {
+    from {
+        height: 0%;
+        opacity: 1;
+    }
+    to {
+        height: 9%;
+        opacity: 1;
+    }
+}
+@keyframes horizontal_i_s2 {
+    from {
+        width: 0%;
+        opacity: 1;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+@keyframes horizontal_d_s2 {
+    from {
+        width: 0%;
+        opacity: 1;
+    }
+    to {
+        width: 14.5%;
+        opacity: 1;
+    }
+}
+@keyframes horizontal_d_l_s2 {
+    from {
+        width: 0%;
+        opacity: 1;
+    }
+    to {
+        width: 28.5%;
+        opacity: 1;
+    }
+}
+@keyframes escala {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes escritura {
+    from {
+        width: 0%;
+        opacity: 1;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}

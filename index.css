@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    padding: 10px;
+    background-color: black;
+}
+.desenfoque {
+    box-shadow: 60px 0 50px -5px black;
+}
+
+/* __________ primera seccion ____________ */
+
+.item_contenedor1 {
+    grid-area: espacio1;
+}
+.contenedor_nombre {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 5px 5px 5px 25px;
+}
+.sena {
+    height: 55%;
+}
+.nombre {
+    color: white;
+    padding: 0 0 0 10px;
+    animation: escritura 5s steps(45, end) 2s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    white-space: nowrap;
+    opacity: 0;
+}
+
+/* __________ segunda seccion ____________ */
+.item_contenedor2 {
+    grid-area: espacio2;
+    padding: 0 0 0 25px;
+    color: white;
+    overflow: visible;
+    text-shadow: 3px 3px 3px #cfcfcf;
+    animation-name: mover;
+    animation-duration: 1s;
+    z-index: 1;
+    background-color: black;
+}
+h1 {
+    width: 125%;
+    font-size: 580%;
+}
+
+/* __________ tercera seccion ____________ */
+.item_contenedor3 {
+    grid-area: espacio3;
+    color: white;
+    padding: 25px 0 0 45px;
+    z-index: 1;
+    background-color: black;
+}
+li {
+    padding: 4px 0;
+    animation: mover 200ms 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+p {
+    opacity: 0;
+    animation: escala 1s 2s;
+    animation-fill-mode: forwards;
+}
+
+/* __________ cuarta seccion ____________ */
+.item_contenedor4 {
+    grid-area: espacio4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boton {
+    padding: 10px;
+    border: 3px solid blue;
+    display: inline-block;
+    font-size:150%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 500ms;
+}
+
+/* __________ quinta seccion ____________ */
+.item_contenedor5 {
+    grid-area: espacio5;
+}
+.pantalla {
+    height: 100%;
+    width: 100%;
+    animation-name: aparicion;
+    animation-duration: 1s;
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.contenedor_principal {
+    display: grid;
+    height: 96vh;
+    overflow: hidden;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 10vh 35vh 33vh 22vh;
+    grid-template-areas: "espacio1 espacio5"
+                         "espacio2 espacio5"
+                         "espacio3 espacio5"
+                         "espacio4 espacio5";
+}
+
+/* _____________ Animaciones ____________ */
+.boton:hover {
+    scale: 1.1;
+    background-color: blue;
+    box-shadow: 0 0 11px rgb(42, 51, 185);
+}
+
+@keyframes mover {
+    from {
+        transform: translateX(-100%);
+        opacity: .3;
+    }
+    to {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes aparicion {
+    from {
+        scale: 1.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes escritura {
+    from {
+        width: 0%;
+        opacity: 1;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+@keyframes escala {
+    50% {
+        scale: 1.1;
+        opacity: 1;
+    }
+    100% {
+        scale: 1;
+        opacity: 1;
+    }
+}
