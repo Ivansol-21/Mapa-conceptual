@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="contenedor">
+      <div class="item"></div>
+    </div>
+    <style>
+      .contenedor {
+        display: flex;
+        flex-flow: row-reverse nowrap;
+        align-items: center;
+        border: 1px solid black;
+        width: 20%;
+        /* height: 50px; */
+      }
+      .item {
+        background-color: red;
+        color: red;
+        height: 10px;
+        animation: crecimiento 1s 1s forwards;
+      }
+      @keyframes crecimiento {
+        from {
+          width: 0%;
+        }
+        to {
+          width: 100%;
+        }
+      }
+    </style>
+  </body>
+</html>
